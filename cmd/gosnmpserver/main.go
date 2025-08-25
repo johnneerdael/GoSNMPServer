@@ -15,20 +15,20 @@ func makeApp() *cli.App {
 	return &cli.App{
 		Name:        "gosnmpserver",
 		Description: "an example server of gosnmp",
-		Commands: []*cli.Command{
-			{
-				Name:    "RunServer",
-				Aliases: []string{"run-server"},
-				Flags: []cli.Flag{
-					&cli.StringFlag{Name: "logLevel", Value: "info"},
-					&cli.StringFlag{Name: "community", Value: "public"},
-					&cli.StringFlag{Name: "bindTo", Value: "127.0.0.1:1161"},
-					&cli.StringFlag{Name: "v3Username", Value: "testuser"},
-					&cli.StringFlag{Name: "v3AuthenticationPassphrase", Value: "testauth"},
-					&cli.StringFlag{Name: "v3PrivacyPassphrase", Value: "testpriv"},
-					&cli.BoolFlag{Name: "v3Only", Value: false},
-				},
-				Action: runServer,
+                Commands: []*cli.Command{
+                        {
+                                Name:    "RunServer",
+                                Aliases: []string{"run-server"},
+                                Flags: []cli.Flag{
+                                        &cli.StringFlag{Name: "logLevel", Value: "info"},
+                                        &cli.StringFlag{Name: "community", Value: "public"},
+                                        &cli.StringFlag{Name: "bindTo", Value: "192.168.50.82:1161"},
+                                        &cli.StringFlag{Name: "v3Username", Value: "netskope"},
+                                        &cli.StringFlag{Name: "v3AuthenticationPassphrase", Value: "netskopetestauth"},
+                                        &cli.StringFlag{Name: "v3PrivacyPassphrase", Value: "netskopetestpriv"},
+                                        &cli.BoolFlag{Name: "v3Only", Value: true},
+                                },
+                                Action: runServer,
 			},
 		},
 	}
